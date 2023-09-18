@@ -1,0 +1,15 @@
+.Card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    padding: 2px;
+    justify-items: center;
+}
+.Descricao-produto{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
