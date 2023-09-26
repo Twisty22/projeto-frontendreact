@@ -1,13 +1,13 @@
 import React from "react";
 import './ProductCardStyle.css'
 
-export default function ProductCard(){
+export default function ProductCard(produto){
     return(
         <div className="Card">
-            <p>Product Card</p>
+            <img src={produto.produto.imageUrl} />
             <div className="Descricao-produto">
-                <p>Nome do Produto</p>
-                <p>Valor</p>
+                <p>{produto.produto.name}</p>
+                <p>{produto.produto.value}</p>
                 <button>Adicionar ao carrinho</button>
             </div>
         </div>
