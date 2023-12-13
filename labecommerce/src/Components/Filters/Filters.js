@@ -2,6 +2,7 @@ import React from "react";
 import './FiltersStyle.css';
 
 export default function Filters(){
+    
     return(
         <div className="Filtros">
             <h2>Filters</h2>
