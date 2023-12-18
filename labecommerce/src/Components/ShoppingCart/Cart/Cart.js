@@ -8,7 +8,7 @@ export default function Cart(props){
         <div className="Carrinho">
             <h2>Cart: </h2>
             {listaCarrinho}
-            <p>Valor Total: {props.amount}</p>
+            <p>Valor Total: R$ {props.amount}</p>
         </div>
     )
 }
