@@ -1,18 +1,14 @@
 import React from "react";
 import './ProductCardStyle.css'
 
-export default function ProductCard(props){
-    function handleClick(){
-        props.addProduct(props.productCard)
-    }
-
+export default function ProductCard(produto){
     return(
         <div className="Card">
-            <img src={props.productCard.imageUrl} />
+            <img src={produto.produto.imageUrl} />
             <div className="Descricao-produto">
-                <p>{props.productCard.name}</p>
-                <p>{props.productCard.value}</p>
-                <button onClick={handleClick}>Adicionar ao carrinho</button>
+                <p>{produto.produto.name}</p>
+                <p>{produto.produto.value}</p>
+                <button>Adicionar ao carrinho</button>
             </div>
         </div>
     )

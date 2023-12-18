@@ -3,12 +3,12 @@ import Items from './Items/Items.js';
 import './CartStyle.css'
 
 export default function Cart(props){
-    const listaCarrinho = props.cart.map((produto) => <Items key={produto.id} produto={produto} removeProduct={props.removeProduct}/>)
+
     return(
         <div className="Carrinho">
-            <h2>Cart: </h2>
-            {listaCarrinho}
-            <p>Valor Total: {props.amount}</p>
+            <h2>Cart</h2>
+            <Items/>
+            <p>Valor Total:</p>
         </div>
     )
 }

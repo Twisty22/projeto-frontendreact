@@ -9,8 +9,7 @@ export default function Home(props){
     const handleSelectChange = (event) => {
         setOrdination(event.target.value)
     }
-    
-    const listaProdutos = props.listaProdutos.map((produto) => <ProductCard key={produto.id} productCard={produto} addProduct={props.addProduct}/>)
+
     return(
         <div className="Home">
             <div className="Modificacoes">
@@ -24,7 +23,9 @@ export default function Home(props){
                 </div>
             </div>
             <div className="Products">
-                {listaProdutos}
+                <ProductCard produto={props.listaProdutos[0]}/>
+                <ProductCard produto={props.listaProdutos[1]}/>
+                <ProductCard produto={props.listaProdutos[2]}/>
             </div>
         </div>
     )
