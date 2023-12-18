@@ -1,13 +1,14 @@
 import React from "react";
 import './ItemsStyle.css'
 
-export default function Items(){
-
+export default function Items(props){
+    function handleClick(){
+        props.removeProduct(props.produto)
+    }
     return(
         <div className="Produtos">
-            <p>x0</p>
-            <p>Nome do Produto</p>
-            <button>Remover</button>
+            <p>x{props.produto.quantity} {props.produto.name}</p>
+            <button onClick={handleClick}>Remover</button>
         </div>
     )
 }
