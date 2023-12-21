@@ -12,10 +12,10 @@ export default function ProductCard(props){
 
     return(
         <div className="Card">
-            <img src={props.productCard.imageUrl} />
+            <img className="Imagem" src={props.productCard.imageUrl} />
             <div className="Descricao-produto">
-                <p>{props.productCard.name}</p>
-                <p>{props.productCard.value}</p>
+                <h4>{props.productCard.name}</h4>
+                <p>R$: {props.productCard.value.toFixed(2)}</p>
                 <button onClick={handleClick}>Adicionar ao carrinho</button>
             </div>
         </div>
