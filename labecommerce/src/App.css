@@ -1,10 +1,18 @@
 #root{
-  padding: 1.5%;
   border: none;  
+}
+.Header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.Logo{
+    max-width: 10%;
+    max-height: 10%;
 }
 .Main{
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 10px;
 }

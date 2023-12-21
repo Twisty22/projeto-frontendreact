@@ -3,6 +3,7 @@ import Home from './Components/ProductList/Home/Home.js';
 import Cart from './Components/ShoppingCart/Cart/Cart.js';
 import { listaProdutos } from './Assets/ProductList.js';
 import { useState } from "react";
+import logo from './Assets/satellite-1-logo-png-transparent.png'
 import './App.css';
 
 function App() {
@@ -81,14 +82,19 @@ function App() {
         console.log(valorProduto)
     }
     return (
-    <div className="Main">
-        <Filters minFilter={minFilter} setMinFilter={setMinFilter} maxFilter={maxFilter}
-         setMaxFilter={setMaxFilter} searchFilter={searchFilter} setSearchFilter={setSearchFilter} 
-         filtrarPorMin={filtrarPorMin} filtrarPorMax={filtrarPorMax} filtrarPorNome={filtrarPorNome}
-         setListaRender={setListaRender}/>
-        <Home listaProdutos={listaRender} amount={amount} setAmount={setAmount} cart={cart} setcart={setCart} 
-        addProduct={addProduct}/>
-        <Cart amount={amount} setAmount={setAmount} cart={cart} setcart={setCart} removeProduct={removeProduct}/>
+    <div>
+        <header className='Header'>
+            <img className='Logo' src={logo}/>
+        </header>
+        <div className="Main">
+            <Filters minFilter={minFilter} setMinFilter={setMinFilter} maxFilter={maxFilter}
+            setMaxFilter={setMaxFilter} searchFilter={searchFilter} setSearchFilter={setSearchFilter} 
+            filtrarPorMin={filtrarPorMin} filtrarPorMax={filtrarPorMax} filtrarPorNome={filtrarPorNome}
+            setListaRender={setListaRender}/>
+            <Home listaProdutos={listaRender} amount={amount} setAmount={setAmount} cart={cart} setcart={setCart} 
+            addProduct={addProduct}/>
+            <Cart amount={amount} setAmount={setAmount} cart={cart} setcart={setCart} removeProduct={removeProduct}/>
+        </div>
     </div>
   );
 }
