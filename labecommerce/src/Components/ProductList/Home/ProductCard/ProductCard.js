@@ -3,6 +3,10 @@ import './ProductCardStyle.css'
 
 export default function ProductCard(props){
     function handleClick(){
+        if(!props.productCard.hasOwnProperty("quantity")){
+            props.productCard.quantity = 1;
+        }
+        console.log(props.productCard)
         props.addProduct(props.productCard)
     }
 

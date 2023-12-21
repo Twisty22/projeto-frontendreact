@@ -5,12 +5,25 @@ import ProductCard from './ProductCard/ProductCard.js';
 
 export default function Home(props){
     const [ordination, setOrdination] = useState('ordem');
-
     const handleSelectChange = (event) => {
         setOrdination(event.target.value)
     }
-    
-    const listaProdutos = props.listaProdutos.map((produto) => <ProductCard key={produto.id} productCard={produto} addProduct={props.addProduct}/>)
+
+    const produtosOrdenados = props.listaProdutos.sort((a,b) => {
+        if(a.value < b.value){
+            return -1;
+        }
+        else if(a.value > b.value){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    })
+    if(ordination === 'decrescente'){
+        produtosOrdenados.reverse();
+    }
+    const listaProdutos = produtosOrdenados.map((produto) => <ProductCard key={produto.id} productCard={produto} addProduct={props.addProduct}/>)
     return(
         <div className="Home">
             <div className="Modificacoes">
