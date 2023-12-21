@@ -3,28 +3,26 @@ import './FiltersStyle.css';
 
 export default function Filters(props){
     const handleMinFilterChange = (event) =>{
-        if(props.minFilter >= 0){
-            props.setMinFilter(event.target.value)
-        }
-        else{
+        if(props.minFilter < 0){
             props.setMinFilter(0);
         }
+        else{
+            props.setMinFilter(event.target.value);
+        }
+        props.setListaRender(props.filtrarPorMin(event.target.value));
     }
     const handleMaxFilterChange = (event) =>{
-        if(props.maxFilter >= 0){
-            props.setMaxFilter(event.target.value)
-        }
-        else{
+        if(props.maxFilter < 0){
             props.setMaxFilter(0);
         }
+        else{
+            props.setMaxFilter(event.target.value);
+        }
+        props.setListaRender(props.filtrarPorMin(event.target.value));
     }
     const handleSearchFilterChange = (event) =>{
-        if(props.searchFilter >= 0){
-            props.setSearchFilter(event.target.value)
-        }
-        else{
-            props.setSearchFilter(0);
-        }
+        props.setSearchFilter(event.target.value);
+        props.setListaRender(props.filtrarPorNome(event.target.value));
     }
 
 
