@@ -2,7 +2,7 @@ import Filters from './Components/Filters/Filters.js';
 import Home from './Components/ProductList/Home/Home.js';
 import Cart from './Components/ShoppingCart/Cart/Cart.js';
 import { listaProdutos } from './Assets/ProductList.js';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from './Assets/satellite-1-logo-png-transparent.png'
 import './App.css';
 
@@ -13,6 +13,22 @@ function App() {
     const [maxFilter, setMaxFilter] = useState(0);
     const [searchFilter, setSearchFilter] = useState('');
     const [listaRender, setListaRender] = useState(listaProdutos);
+
+    useEffect(() =>{
+        const listaSalva = localStorage.getItem("listaCarrinho");
+        const valorSalvo = localStorage.getItem("valorTotal");
+        if(listaSalva && valorSalvo){
+            setCart(JSON.parse(listaSalva))
+            setAmount(JSON.parse(valorSalvo))
+        }
+    }, [])
+
+    useEffect(() => {
+        if(cart.length >= 1){
+            window.localStorage.setItem("listaCarrinho", JSON.stringify(cart))
+            window.localStorage.setItem("valorTotal", JSON.stringify(amount))
+        }
+    } ,[cart])
     
     const filtrarPorMin = (valorFiltro) => {
         const produtosFiltrados = listaProdutos.filter((item) => {
